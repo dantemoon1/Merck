@@ -37,6 +37,7 @@ function SearchBar() {
                     </DropdownButton>
                 </InputGroup>
             </div>
+            &nbsp;
             <div id='submit'>
                 <input type="submit" value="Search" onClick={handleSubmit} />
             </div>

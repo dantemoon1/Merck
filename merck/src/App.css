@@ -15,5 +15,6 @@
 
 #search{
     margin-top: 20%;
-    border: solid black 1.5px;
+    display: flex;
+    justify-content: center;
 }
