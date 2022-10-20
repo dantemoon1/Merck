@@ -1,0 +1,19 @@
+.App{
+    display: flex;
+    flex-direction: column;
+}
+
+.topBar{
+    background-color: #DEECE2;
+    height: 100vh;
+}
+
+#logo{
+    padding-left: 2%;
+    padding-top: 2%;
+}
+
+#search{
+    margin-top: 20%;
+    border: solid black 1.5px;
+}
