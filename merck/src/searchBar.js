@@ -6,8 +6,8 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 function SearchBar() {
-    const [searchCategory, setSearchCategory] = useState('Name');
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchCategory, setSearchCategory] = useState('Name'); // default search category is Name
+    const [searchTerm, setSearchTerm] = useState(''); 
     const [DropdownText, setDropdownText] = useState('Search by');
 
     const handleSearchCategoryChange = (event) => {
@@ -21,14 +21,15 @@ function SearchBar() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert('A search was submitted: ' + searchTerm);
+        alert('A search was submitted\n\nSearch Term: ' + searchTerm + '\n\nSearch Category: ' + searchCategory);
+        //make a call to the backend to search for this term
     }
 
     return (
         <div className="searchBar">
             <div id='bar'>
                 <InputGroup>
-                    <Form.Control/>
+                    <Form.Control onChange={handleSearchTermChange}/>
                     <DropdownButton align="end" title={DropdownText}>
                         <Dropdown.Item onClick={handleSearchCategoryChange}>Name</Dropdown.Item>
                         <Dropdown.Item onClick={handleSearchCategoryChange}>Fill with</Dropdown.Item>
