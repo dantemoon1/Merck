@@ -32,9 +32,10 @@ function SearchBar() {
                     <Form.Control onChange={handleSearchTermChange}/>
                     <DropdownButton align="end" title={DropdownText}>
                         <Dropdown.Item onClick={handleSearchCategoryChange}>Name</Dropdown.Item>
-                        <Dropdown.Item onClick={handleSearchCategoryChange}>Fill with</Dropdown.Item>
-                        <Dropdown.Item onClick={handleSearchCategoryChange}>other search</Dropdown.Item>
-                        <Dropdown.Item onClick={handleSearchCategoryChange}>options</Dropdown.Item>
+                        <Dropdown.Item onClick={handleSearchCategoryChange}>BP Number</Dropdown.Item>
+                        <Dropdown.Item onClick={handleSearchCategoryChange}>Species</Dropdown.Item>
+                        <Dropdown.Item onClick={handleSearchCategoryChange}>Matrix</Dropdown.Item>
+                        <Dropdown.Item onClick={handleSearchCategoryChange}>Chromatography</Dropdown.Item>
                     </DropdownButton>
                 </InputGroup>
             </div>
