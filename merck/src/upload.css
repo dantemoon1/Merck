@@ -1,0 +1,90 @@
+
+.drag-area{
+    border: 1px dashed rgb(43, 42, 42);
+    padding: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .drag-area.active{
+    border: 2px solid rgb(0, 0, 0);
+  }
+  .drag-area .icon{
+    font-size: 100px;
+    
+  }
+  .drag-area header{
+    font-size: 20px;
+    color: rgb(52, 50, 50);
+  }
+  .drag-area span{
+    margin: 10px 0 15px 0;
+    color: rgb(52, 50, 50);
+  }
+  .drag-area button{
+    padding: 10px 25px;
+    font-size: 15px;
+    width: 250px;
+    border: none;
+    outline: none;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .drag-area img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .resultsHead{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .resultsHead header{
+    font-size: 35px;
+  }
+  .resultsHead header2{
+    padding: 7px;
+    font-size: 15px;
+  }
+  .resultsHead subtitle{
+    font-size: 9px;
+    color: rgb(52, 50, 50);
+  }
+
+  .resultsList{
+    padding-top: 50px;
+    padding-left: 30px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+  }
+
+  .resultsList p{
+    font-size: 20px; 
+  }
+  .resultsBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .resultsBtn button{
+
+    font-size: 15px;
+    width: 100px;
+    border: none;
+    outline: none;
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+  }
