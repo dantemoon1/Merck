@@ -3,6 +3,7 @@ import Logo from './logo';
 import SearchBar from './searchBar';
 import Upload from './upload';
 import "bootstrap/dist/css/bootstrap.min.css";
+import Results from './results';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </div>
         <div id='upload'>
           <Upload/>
+        </div>
+        <div id='results'>
+          <Results/>
         </div>
       </div>
     </div>

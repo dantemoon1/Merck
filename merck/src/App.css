@@ -25,5 +25,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 25px;
+}
+
+#results{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 5%;
+    width: 50%;
 }
