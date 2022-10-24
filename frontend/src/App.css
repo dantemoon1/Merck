@@ -29,9 +29,20 @@
 }
 
 #results{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 5%;
-    width: 50%;
+    padding-top: 35vh;
+    padding-left: 2%;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+table{
+    padding-left: 2%;
+}
+
+h2{
+    padding-top: 25px;
+    padding-left: 1%;
 }

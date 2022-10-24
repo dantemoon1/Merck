@@ -5,7 +5,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-function SearchBar() {
+function SearchBar({renderResults}) {
     const [searchCategory, setSearchCategory] = useState('Name'); // default search category is Name
     const [searchTerm, setSearchTerm] = useState(''); 
     const [DropdownText, setDropdownText] = useState('Search by');
@@ -21,7 +21,8 @@ function SearchBar() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert('A search was submitted\n\nSearch Term: ' + searchTerm + '\n\nSearch Category: ' + searchCategory);
+        renderResults();
+        //alert('A search was submitted\n\nSearch Term: ' + searchTerm + '\n\nSearch Category: ' + searchCategory);
         //make a call to the backend to search for this term
     }
 
