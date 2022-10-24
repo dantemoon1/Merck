@@ -1,20 +1,15 @@
-import React, { Fragment, useState } from 'react';
+import React, {useState } from 'react';
 import './upload.css'
 import Dialog from '@mui/material/Dialog';
 import LogoSmall from './logoSmall';
-import Results from './results'
 import DialogContent from '@mui/material/DialogContent';
 import Button from 'react-bootstrap/Button';
 import { DialogActions, DialogTitle } from '@mui/material';
 import Dropzone from 'react-dropzone';
-import { useRef } from 'react';
-import { display, width } from '@mui/system';
 
 function Upload() {
     const [expanded, setExpanded] = useState(false);
     const [expandedResults, setExpandedResults] = useState(false);
-    const inputRef = useRef(null);
-    const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
         setExpanded(true);
@@ -56,8 +51,6 @@ function Upload() {
 
     return(
         <div>
-            <Results>
-            </Results>
             <Button variant="dark" onClick={handleClickOpen}>
                 Upload New Document
             </Button>
