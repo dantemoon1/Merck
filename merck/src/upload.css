@@ -88,3 +88,11 @@
     color: #ffffff;
     cursor: pointer;
   }
+
+  table.table-bordered{
+    table-layout: fixed;
+    width: 560px;
+  }
+  tr{
+    height: 50px;
+  }

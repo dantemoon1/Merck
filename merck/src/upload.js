@@ -12,8 +12,10 @@ import { useRef } from "react";
 import { display, width } from "@mui/system";
 
 function Upload() {
+  const txt = '{"Title":"parsed info", "Compound Name":"parsed info", "Extraction Method":"parsed info"}'
+  const parsed = JSON.parse(txt);
   const [expanded, setExpanded] = useState(false);
-  const [attribute1, setAttribute1] = useState("Value");
+  const [attribute1, setAttribute1] = useState(parsed.Title);
   const [showValue, setShowValue] = useState(false);
 
   /*
@@ -62,6 +64,8 @@ function Upload() {
     handleClose();
     handleResultsOpen();
   };
+
+  
 
   return (
     <div>
@@ -126,18 +130,48 @@ function Upload() {
         </div>
         <div class="resultsList">
           <div>
-            <div>
-              <strong>Title: </strong>
-              <ClickEdit
+
+          </div>
+        </div>
+        <div class="container">
+
+  
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered" id="editableTable">
+        <thead>
+          <tr>
+            
+            <th>Value</th>
+            <th>Feature</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-id="1">
+            <td data-field="Feature">Title</td>
+            <td data-field="Value"><ClickEdit
                 value={attribute1}
                 handleChange={(e) => setAttribute1(e.target.value)}
                 handleDoubleClick={() => setShowValue(true)}
                 handleBlur={() => setShowValue(false)}
                 showValue={showValue}
-              />
-            </div>
-          </div>
-        </div>
+              /></td>
+          </tr>
+          <tr data-id="2">
+            <td data-field="Feature">Compound Name</td>
+            <td data-field="Value">parsed info</td>
+          </tr>
+          <tr data-id="3">
+            <td data-field="Feature">Extraction Method</td>
+            <td data-field="Value">parsed info</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
         <div class="resultsBtn">
           <button onClick={handleResultsClose}>Save</button>
         </div>
