@@ -6,10 +6,14 @@ import DialogContent from '@mui/material/DialogContent';
 import Button from 'react-bootstrap/Button';
 import { DialogActions, DialogTitle } from '@mui/material';
 import Dropzone from 'react-dropzone';
+import axios from 'axios';
+import { boxSizing } from '@mui/system';
 
 function Upload() {
     const [expanded, setExpanded] = useState(false);
     const [expandedResults, setExpandedResults] = useState(false);
+    //state variable for json response from backend
+    const [parsed, setParsed] = useState(null);
 
     const handleClickOpen = () => {
         setExpanded(true);
@@ -27,8 +31,29 @@ function Upload() {
 
     const acceptedFiles = [];
 
-    const populateAcceptedFiles = (accepted) => {
+const populateAcceptedFiles =  (accepted) => {
         acceptedFiles[0] = accepted;
+        //upload(accepted[0]);
+        //console.log(typeof acceptedFiles[0]);
+        //upload the pdf to the backend
+    };
+
+    const upload = async () => {
+        let url = 'https://fastapi-dantemoon1.cloud.okteto.net/upload';
+        const form = new FormData();
+        form.append('file', acceptedFiles[0][0]);
+        axios({
+            method: 'post',
+            url: url,
+            data: form,
+            headers: {'Content-Type': 'undefined' }
+        }).then((response) => {
+            console.log(response);
+            setParsed(response.data);
+            handleResultsOpen();
+        }).catch((error) => {
+            console.log(error);
+        });
     };
 
     const updateFileList = () => {
@@ -46,6 +71,21 @@ function Upload() {
     const resultsPage = () => {
         handleClose();
         handleResultsOpen();
+    }
+
+    const buildResults = () => {
+        var results = [];
+        if(parsed != null) {
+            for(var i = 0; i < parsed.length; i++) {
+                var obj = parsed[i];
+                for (var key in obj){
+                    var val = obj[key];
+                    results.push(<tr><td>{key}</td><td>{val}</td></tr>);
+                }
+            }
+        }
+        //console.log(results);
+        return results;
     }
 
 
@@ -86,7 +126,7 @@ function Upload() {
                     <Button onClick={handleClose} color="primary">
                         Cancel
                     </Button>
-                    <Button onClick={resultsPage} color="primary">
+                    <Button onClick={upload} color="primary">
                         Upload
                     </Button>
                 </DialogActions>
@@ -104,9 +144,7 @@ function Upload() {
                 <subtitle>double click any field to edit</subtitle>
                 </div>
                 <div class = "resultsList">
-                <p>Title:</p>
-                <p>Compound Name:</p>
-                <p>Extraction Method:</p>
+                <table>{buildResults()}</table>
                 </div>
                 <div class = "resultsBtn">
                 <button onClick={handleResultsClose}>Save</button>
