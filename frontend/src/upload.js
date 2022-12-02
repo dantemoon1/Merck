@@ -8,6 +8,7 @@ import { DialogActions, DialogTitle } from '@mui/material';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import { boxSizing } from '@mui/system';
+import { TextareaAutosize } from '@mui/material';
 
 function Upload() {
     const [expanded, setExpanded] = useState(false);
@@ -80,7 +81,7 @@ const populateAcceptedFiles =  (accepted) => {
                 var obj = parsed[i];
                 for (var key in obj){
                     var val = obj[key];
-                    results.push(<tr><td>{key}</td><td>{val}</td></tr>);
+                    results.push(<tr><td>{key}</td><td><TextareaAutosize defaultValue={val} style={{border:"none"}}></TextareaAutosize></td></tr>);
                 }
             }
         }
