@@ -24,6 +24,7 @@ function Upload() {
         setExpanded(false);
     };
     const handleResultsClose = () => {
+        setExpanded(false);
         setExpandedResults(false);
     };
     const handleResultsOpen = () => {
