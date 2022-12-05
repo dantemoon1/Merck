@@ -5,9 +5,13 @@ import Upload from './upload';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Results from './results';
 import { useState, useRef, useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
   const [showResults, setShowResults] = useState(false);
+  const [res1, setRes1] = useState(null);
+  const [res2, setRes2] = useState(null);
+  const [res3, setRes3] = useState(null);
 
   const resultsRef = useRef(null);
 
