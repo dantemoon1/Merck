@@ -5,7 +5,8 @@ export default function Results(showResults) {
 
     useEffect(() => { //this will run when the component mounts
         resultsRef.current.scrollIntoView({ behavior: 'smooth' }); //scroll to the results
-    });
+        //you can put your fetch code here or in the parent component
+    }, []); //empty array means this will only run once
 
     return(
         <div ref={resultsRef}>
